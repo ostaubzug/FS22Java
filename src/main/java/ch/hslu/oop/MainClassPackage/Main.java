@@ -4,6 +4,9 @@
  */
 package ch.hslu.oop.MainClassPackage;
 
+import ch.hslu.oop.sw05.*;
+
+
 /**
  *
  * @author ostau
@@ -11,7 +14,8 @@ package ch.hslu.oop.MainClassPackage;
 public class Main {
     public static void main(String[] args){
         
-        System.out.println("Hello World");
+        Circle circle = new Circle(3,3,4);
+        System.out.println(circle.getX());
     }
     
 }
