@@ -13,9 +13,10 @@ import ch.hslu.oop.sw05.*;
  */
 public class Main {
     public static void main(String[] args){
+
+        Square square = new Square(5);
+        System.out.print(square.getArea());
         
-        Circle circle = new Circle(3,3,5);
-        System.out.println(circle.getX());
     }
     
 }
