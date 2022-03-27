@@ -8,14 +8,23 @@ package ch.hslu.oop.sw03;
  *
  * @author ostau
  */
-
 public class Demo
 {
+
+    /**
+     * Konstruktor für Demo
+     */
     public Demo()
     {
         
     }
     
+    /**
+     *
+     * @param a input 1
+     * @param b input 2
+     * @return Gibt das Maximum zurück
+     */
     public int max(int a, int b)
     {
         if(a > b)
@@ -28,6 +37,9 @@ public class Demo
         }
     }
     
+    /**
+     * Gibt das Minimum zurück
+     */
     public int min(int a, int b)
     {
         if(a < b)
