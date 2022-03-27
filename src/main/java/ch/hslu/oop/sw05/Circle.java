@@ -13,6 +13,7 @@ public class Circle extends Shape {
     private int diameter;
 
     public Circle(int x, int y, int diameter){
+        super(x,y);
         this.x = x;
         this.y = y;
         this.diameter = diameter;
