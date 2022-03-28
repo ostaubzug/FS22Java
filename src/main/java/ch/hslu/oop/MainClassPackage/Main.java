@@ -1,22 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-
 package ch.hslu.oop.MainClassPackage;
 
 import ch.hslu.oop.sw05.*;
-/**
- *
- * @author ostau
- */
+
 public class Main {
     public static void main(String[] args){
 
-        Square square = new Square(5);
-        System.out.print(square.getArea());
-        
+        Nitrogen nitrogen = new Nitrogen();
+        System.out.println(nitrogen.getAggregateState(500));
     }
     
 }
