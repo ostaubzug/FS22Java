@@ -2,6 +2,9 @@ package ch.hslu.oop.sw05;
 
 public abstract class ChemicalElement {
 
+    //TODO Temparatur als Temparatur Objekt verwenden, damit es einfacher ist.
+    //TODO TemparaturKlasse refactoring
+
     private String symbol;
     private int boilTemperatureKelvin;
     private int meltTemperatureKelvin;

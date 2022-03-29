@@ -29,9 +29,7 @@ public class Rectangle extends Shape {
     }
     public int getHeight(){
         return height;
-    }
-
-    
+    }   
 
     @Override
     public int getPerimeter() {

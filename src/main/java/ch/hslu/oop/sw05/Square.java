@@ -7,6 +7,10 @@ package ch.hslu.oop.sw05;
 /**
  *
  * @author ostau
+ * 
+ * Erzeugt z.T. verdoppelten Code mit Rectangle
+ * 
+ * Am elegantesten wäre eine Komposition
  */
 public class Square extends Shape {
 
