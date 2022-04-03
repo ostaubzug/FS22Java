@@ -1,19 +1,15 @@
 package ch.hslu.oop.sw05;
 
-public abstract class ChemicalElement {
-
-    //TODO Temparatur als Temparatur Objekt verwenden, damit es einfacher ist.
-    //TODO TemparaturKlasse refactoring
+public abstract class ChemicalElement{
 
     private String symbol;
-    private int boilTemperatureKelvin;
-    private int meltTemperatureKelvin;
+    private Temparature boilTemperature;
+    private Temparature meltTemperature;
 
-
-    public ChemicalElement(String symbol, int boilTemperatureKelvin, int meltTemperatureKelvin) {
+    public ChemicalElement(String symbol, Temparature boilTemperature, Temparature meltTemperature) {
         this.symbol = symbol;
-        this.boilTemperatureKelvin = boilTemperatureKelvin;
-        this.meltTemperatureKelvin = meltTemperatureKelvin;
+        this.boilTemperature = boilTemperature;
+        this.meltTemperature = meltTemperature;
     }
 
     public String getSymbol() {
@@ -25,12 +21,13 @@ public abstract class ChemicalElement {
         return "ChemicalElement[Symbol=" + this.symbol + "]";
     }
 
-    public String getAggregateState(int temparatureKelvin){
-        if(temparatureKelvin <= meltTemperatureKelvin)
+    public String getAggregateState(Temparature temparature){
+        if(temparature.getTemperatureKelvin() <= meltTemperature.getTemperatureKelvin())
         {
           return "fest";                         
         }
-        else if(temparatureKelvin > meltTemperatureKelvin && temparatureKelvin <= boilTemperatureKelvin)
+        else if(temparature.getTemperatureKelvin() > meltTemperature.getTemperatureCelsius()
+        && temparature.getTemperatureKelvin() <= boilTemperature.getTemperatureKelvin())
         {
           return "flüssig";                         
         }
