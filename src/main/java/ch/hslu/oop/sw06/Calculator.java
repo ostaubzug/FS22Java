@@ -4,7 +4,7 @@ public class Calculator implements Icalculator {
 
     @Override
     public long addition(final int x, final int y) {
-        return x + y;
+        return (long) x + y;
     }
    
 }
