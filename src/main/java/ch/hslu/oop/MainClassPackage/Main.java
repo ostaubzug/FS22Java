@@ -1,7 +1,5 @@
 package ch.hslu.oop.MainClassPackage;
 
-import ch.hslu.oop.sw05.*;
-
 /**
  * 
  */

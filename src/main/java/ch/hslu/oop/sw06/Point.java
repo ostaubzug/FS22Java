@@ -14,6 +14,8 @@ public class Point {
     private int x;
     private int y;
 
+    //man könnte beim verschieben noch auf overflows aufpassen
+
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
@@ -23,7 +25,7 @@ public class Point {
         this(point.getX(),point.getY());
     }
     
-    public void moveRelative(int x, int y) {
+    public final void moveRelative(int x, int y) {
         this.x += x;
         this.y += y;
     }
@@ -35,8 +37,6 @@ public class Point {
 
     // schlechte Idee weil Signaturen sehr ähnlich sind
     public void moveRelative(double angle, double amount) {
-        //TODO Stimmt noch nicht!!
-        //TODO Unit Tests schreiben
         int xVector = (int) (angle * Math.cos(amount));
         this.x += xVector;
         int yVector = (int) (angle * Math.cos(amount));

@@ -26,7 +26,7 @@ public class CalculatorTest {
 
     @Test
     public void testAdditionNegativeNegative(){
-        Calculator calculator = new Calculator();
+        Icalculator calculator = new Calculator();
         long result = calculator.addition(-3, -2);
         assertEquals(-5, result);
     }
