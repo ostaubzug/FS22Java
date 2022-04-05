@@ -11,6 +11,6 @@ public interface Icalculator {
      * @param x int number
      * @param y int number
      */
-    public int addition(final int x, final int y);
+    public long addition(final int x, final int y);
     
 }
