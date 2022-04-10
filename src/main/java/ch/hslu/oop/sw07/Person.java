@@ -27,8 +27,6 @@ public class Person {
         if (!(object instanceof Person p)) {
             return false;
         }
-        // System Null reference Exception?
-        // TODO wie automatisch fomr
         return (Objects.equals(p.surName, this.surName)) &&
                 (Objects.equals(p.name, this.name));
     }
