@@ -50,4 +50,25 @@ public class PersonTest {
         Person person2 = new Person(2, "Christoph", "blocher");
         assertNotEquals(person1.hashCode(),person2.hashCode());
     }
+
+    @Test
+    public void testcomparableSmaller(){
+        Person person1  = new Person(1, "A" , "C");
+        Person person2 = new Person(2, "B" ,"D");
+        assertEquals(-1, person1.compareTo(person2));
+    }
+
+    @Test
+    public void testcomparableLarger(){
+        Person person1  = new Person(2, "A" , "C");
+        Person person2 = new Person(1, "B" ,"D");
+        assertEquals(1, person1.compareTo(person2));
+    }
+
+    @Test
+    public void testcomparableSame(){
+        Person person1  = new Person(2, "A" , "C");
+        Person person2 = new Person(2, "B" ,"D");
+        assertEquals(0, person1.compareTo(person2));
+    }
 }

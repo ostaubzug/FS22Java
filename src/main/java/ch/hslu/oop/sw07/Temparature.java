@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 
 
-public class Temparature
+public class Temparature implements Comparable<Temparature>
 {
     private float temperatureCelsius;
 
@@ -75,6 +75,11 @@ public class Temparature
     @Override
     public final int hashCode() {
         return Objects.hash(this.temperatureCelsius);
+    }
+
+    @Override
+    public int compareTo(Temparature temparature) {
+        return Float.compare(this.temperatureCelsius, temparature.temperatureCelsius );
     }
 }
 

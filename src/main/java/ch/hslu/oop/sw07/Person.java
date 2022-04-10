@@ -2,7 +2,7 @@ package ch.hslu.oop.sw07;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
 
     private final long Id;
     private final String name;
@@ -46,6 +46,11 @@ public class Person {
 
     public long getId() {
         return Id;
+    }
+
+    @Override
+    public int compareTo(Person person) {
+        return Long.compare(this.Id, person.Id);
     }
 
 }

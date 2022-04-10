@@ -53,8 +53,24 @@ public class TemparatureTest {
         assertNotEquals(temparature1.hashCode(), temparature2.hashCode());
     }
 
+    @Test
+    public void testcomparableSmaller(){
+        Temparature temparature1 = new Temparature(2);
+        Temparature temparature2 = new Temparature(5);
+        assertEquals(-1, temparature1.compareTo(temparature2));
+    }
 
+    @Test
+    public void testcomparableLarger(){
+        Temparature temparature1 = new Temparature(12);
+        Temparature temparature2 = new Temparature(5);
+        assertEquals(1, temparature1.compareTo(temparature2));
+    }
 
-
-
+    @Test
+    public void testcomparableSame(){
+        Temparature temparature1 = new Temparature(5);
+        Temparature temparature2 = new Temparature(5);
+        assertEquals(0, temparature1.compareTo(temparature2));
+    }
 }
