@@ -1,8 +1,11 @@
 package ch.hslu.oop.sw07;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 import org.junit.jupiter.api.Test;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 
 public class PersonTest {
 
@@ -17,7 +20,7 @@ public class PersonTest {
 
     @Test
     public void testEqual(){
-        EqualsVerifier.forClass(Person.class).verify();
+        EqualsVerifier.forClass(Person.class).suppress(Warning.ALL_FIELDS_SHOULD_BE_USED).verify();
     }
 
     @Test
@@ -32,5 +35,20 @@ public class PersonTest {
         Person person1 = new Person(1, "Christoph", "Blocher");
         Person person2 = new Person(2, "Christoph", "Blocher");
         assertEquals(true, person1.equals(person2));
+    }
+
+    @Test
+    public void testHashSimilar(){
+        Person person1 = new Person(1, "Christoph", "Blocher");
+        Person person2 = new Person(2, "Christoph", "Blocher");
+        assertEquals(person1.hashCode(),person2.hashCode());
+    }
+
+    @Test
+    //SHOULD run but does not have to
+    public void testHashDifferent(){
+        Person person1 = new Person(1, "Christoph", "Blocher");
+        Person person2 = new Person(2, "Christoph", "blocher");
+        assertNotEquals(person1.hashCode(),person2.hashCode());
     }
 }

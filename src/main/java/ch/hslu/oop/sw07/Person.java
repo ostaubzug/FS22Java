@@ -5,58 +5,49 @@ import java.util.Objects;
 public class Person {
 
     private final long Id;
-    private String name;
-    private String surName;
+    private final String name;
+    private final String surName;
 
-    public Person(long Id, String name, String surName) {
+    public Person(final long Id,final String name,final String surName) {
         this.Id = Id;
-        this.setName(name);
-        this.setSurName(surName);
+        this.name = name;
+        this.surName = surName;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Person [" + this.Id + " " + this.name + " " + this.surName + "]";
     }
 
     @Override
-    public boolean equals(final Object object){
-        if (object == this){
+    public final boolean equals(final Object object) {
+        if (object == this) {
             return true;
-        }      
-        if (!(object instanceof Person p)){
+        }
+        if (!(object instanceof Person p)) {
             return false;
         }
-        //System Null reference Exception? 
+        // System Null reference Exception?
+        // TODO wie automatisch fomr
         return (Objects.equals(p.surName, this.surName)) &&
-                (Objects.equals(p.name, this.name));        
+                (Objects.equals(p.name, this.name));
     }
 
     @Override
-    public int hashCode(){
-        return 5;
+    public final int hashCode() {
+        return Objects.hash(this.name, this.surName);
     }
-    
-
 
     public String getSurName() {
         return surName;
-    }
-
-    public void setSurName(String surName) {
-        this.surName = surName;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public long getId() {
         return Id;
     }
-    
+
 }
