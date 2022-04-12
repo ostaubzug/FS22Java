@@ -4,21 +4,26 @@ import java.util.Objects;
 
 public class Person implements Comparable<Person> {
 
-    private final long Id;
+    private final long id;
     private final String name;
     private final String surName;
 
-    public Person(final long Id,final String name,final String surName) {
-        this.Id = Id;
+    public Person(final long id, final String name, final String surName) {
+        this.id = id;
         this.name = name;
         this.surName = surName;
     }
 
+    // Todo fragen nächstes mal ob es in Java eine String Interpolation gibt
+
+    // Wichtig fürs Loggen !
     @Override
     public String toString() {
-        return "Person [" + this.Id + " " + this.name + " " + this.surName + "]";
+        return "Person [" + this.id + " " + this.name + " " + this.surName + "]";
     }
 
+    // Alternative Lösung nur die Id anschauen
+    //Zwei personen Objekte können auf alle Attribute zugreifen, deshalb kann hier surName direkt aufgerufen werden
     @Override
     public final boolean equals(final Object object) {
         if (object == this) {
@@ -45,12 +50,12 @@ public class Person implements Comparable<Person> {
     }
 
     public long getId() {
-        return Id;
+        return id;
     }
 
     @Override
     public int compareTo(Person person) {
-        return Long.compare(this.Id, person.Id);
+        return Long.compare(this.id, person.id);
     }
 
 }

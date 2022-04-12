@@ -11,6 +11,8 @@ public class PersonComparator implements Comparator<Person> {
         int nameSort = person1.getName().compareTo(person2.getName());
         int surnameSort = person1.getSurName().compareTo(person2.getSurName());
 
+
+        //Todo es braucht relativ viele if Statements
         if(surnameSort == 0){
             return nameSort;
         }

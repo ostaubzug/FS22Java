@@ -19,6 +19,7 @@ public class PersonTest {
 
     @Test
     public void testEqual(){
+        //EqualsVerifier.forClass(Person.Class).withOnlyTheseFields("id").verify();
         EqualsVerifier.forClass(Person.class).suppress(Warning.ALL_FIELDS_SHOULD_BE_USED).verify();
     }
 
@@ -34,6 +35,8 @@ public class PersonTest {
         Person person1 = new Person(1, "Christoph", "Blocher");
         Person person2 = new Person(2, "Christoph", "Blocher");
         assertEquals(true, person1.equals(person2));
+        //Todo wichtig !!! Das geht auch, ist eigentlich einfacher:
+        assertEquals(person1, person2);
     }
 
     @Test
