@@ -2,7 +2,7 @@ package ch.hslu.oop.sw07;
 
 import java.util.Objects;
 
-public final class Point {
+public final class Point implements Comparable<Point> {
     private int x;
     private int y;
 
@@ -25,7 +25,7 @@ public final class Point {
         this.y += point.getY();
     }
 
-    //Math not correct
+    // Math not correct
     public void moveRelativeAngle(double angle, double amount) {
         int xVector = (int) (angle * Math.cos(amount));
         this.x += xVector;
@@ -86,5 +86,19 @@ public final class Point {
     @Override
     public final int hashCode() {
         return Objects.hash(this.x, this.y);
+    }
+
+    @Override
+    public int compareTo(Point other) {
+        if(this == other){
+            return 0;
+        }
+        else if (Integer.compare(this.x, other.x) == 1) {
+            return 1;
+        }
+        else if (Integer.compare(this.x, other.x) == -1){
+            return -1;
+        }
+        return 0;
     }
 }

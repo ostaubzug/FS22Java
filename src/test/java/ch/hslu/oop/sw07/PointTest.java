@@ -63,5 +63,26 @@ public class PointTest {
         Point point2 = new Point(1, 2);
         assertNotEquals(point1.hashCode(), point2.hashCode());
     }
+    
+    @Test
+    public void testCompareToSmaller() {
+        Point point1 = new Point(1, 2);
+        Point point2 = new Point(4, 5);
+        assertEquals(-1,point1.compareTo(point2));
+    }
+
+    @Test
+    public void testCompareToLarger() {
+        Point point1 = new Point(6, 2);
+        Point point2 = new Point(4, 5);
+        assertEquals(1,point1.compareTo(point2));
+    }
+
+    @Test
+    public void testCompareToSame() {
+        Point point1 = new Point(4, 2);
+        Point point2 = new Point(4, 5);
+        assertEquals(0,point1.compareTo(point2));
+    }
 
 }
