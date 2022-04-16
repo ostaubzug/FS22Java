@@ -30,8 +30,9 @@ public class PointTest {
 
     @Test
     public void testEqual() {
-        EqualsVerifier.forClass(Point.class).suppress
-        (Warning.ALL_FIELDS_SHOULD_BE_USED,Warning.NONFINAL_FIELDS).verify();
+        //Todo Okay das zu unterdrücken ?
+        EqualsVerifier.forClass(Point.class).withOnlyTheseFields("x", "y").
+        suppress(Warning.NONFINAL_FIELDS).verify();
     }
 
     @Test

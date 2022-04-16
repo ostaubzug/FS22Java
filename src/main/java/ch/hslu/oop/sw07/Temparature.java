@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 
 
-public class Temparature implements Comparable<Temparature>
+public final class Temparature implements Comparable<Temparature>
 {
     private float temperatureCelsius;
 

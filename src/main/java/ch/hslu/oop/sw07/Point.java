@@ -1,17 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ch.hslu.oop.sw07;
 
 import java.util.Objects;
 
-/**
- * Describes a Point
- * 
- * @author Oliver Staub
- */
-public class Point {
+public final class Point {
     private int x;
     private int y;
 
@@ -34,6 +25,7 @@ public class Point {
         this.y += point.getY();
     }
 
+    //Math not correct
     public void moveRelativeAngle(double angle, double amount) {
         int xVector = (int) (angle * Math.cos(amount));
         this.x += xVector;
