@@ -8,7 +8,7 @@ package ch.hslu.oop.sw05;
  *
  * @author ostau
  */
-public class Rectangle extends Shape {
+public final class Rectangle extends Shape {
 
     private int width;
     private int height;

@@ -12,7 +12,7 @@ package ch.hslu.oop.sw05;
  * 
  * Am elegantesten wäre eine Komposition
  */
-public class Square extends Shape {
+public final class Square extends Shape {
 
     public Square(int x){
         super(x,x);

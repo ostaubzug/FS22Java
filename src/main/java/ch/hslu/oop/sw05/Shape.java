@@ -25,17 +25,17 @@ public abstract class Shape {
      * @param newX
      * @param newY
      */
-    public void move(int newX, int newY){
+    public final void move(int newX, int newY){
         this.x = newX;
         this.y = newY;
     }
     
-    public int getX(){
+    public final int getX(){
         int returnX = x;
         return returnX;
     }
     
-    public int getY(){
+    public final int getY(){
         int returnY = y;
         return returnY;
     }
