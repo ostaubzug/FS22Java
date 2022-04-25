@@ -2,7 +2,6 @@ package ch.hslu.oop.sw08;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.hamcrest.number.IsNaN;
 import org.junit.jupiter.api.Test;
 
 public class TemparatureHistoryTest {
