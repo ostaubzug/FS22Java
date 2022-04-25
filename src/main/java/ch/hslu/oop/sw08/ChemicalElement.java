@@ -1,6 +1,5 @@
 package ch.hslu.oop.sw08;
 
-import java.util.EnumMap;
 import java.util.Objects;
 
 public abstract class ChemicalElement implements Comparable<ChemicalElement> {
@@ -33,11 +32,11 @@ public abstract class ChemicalElement implements Comparable<ChemicalElement> {
     public String getAggregateStateString(Temparature temparature) {
         switch(getAggregateState(temparature)){
             case GAS:
-                return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.gaseous;
+                return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.GAS.getZustand();
             case LIQUID:
-                return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.liquid;
+                return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.LIQUID.getZustand();
             case SOLID:
-                return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.solid;
+                return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.SOLID.getZustand();
             default:
                 return "Error: Aggregate State could not be defined";
         }

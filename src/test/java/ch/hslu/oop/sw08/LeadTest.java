@@ -62,7 +62,7 @@ public class LeadTest {
     @Test
     public void testAggregateGaseousString(){
         ChemicalElement lead = new Lead();
-        String aggregateState = lead.getAggregateStateString(new Temparature(1800));
+        String aggregateState = lead.getAggregateStateString(new Temparature(1800f));
         assertEquals("Pb ist bei 1800 °C gasförmig", aggregateState);
     }
 }

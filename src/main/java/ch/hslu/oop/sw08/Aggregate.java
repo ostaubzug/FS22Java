@@ -2,11 +2,17 @@ package ch.hslu.oop.sw08;
 
 public enum Aggregate {
 
-    LIQUID, SOLID, GAS;
+    LIQUID("flüssig"), SOLID("fest"), GAS("gasförmig");
 
-    static final String solid = "fest";
-    static final String liquid = "flüssig";
-    static final String gaseous = "gasförmig";
+    private final String zustand;
 
-    
+    private Aggregate(final String zustand){
+        this.zustand = zustand;
+    }
+
+    public String getZustand(){
+        return this.zustand;
+    }
+
 }
+
