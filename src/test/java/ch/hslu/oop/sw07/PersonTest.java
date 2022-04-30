@@ -44,7 +44,6 @@ public class PersonTest {
 
     @Test
     //SHOULD run but does not have to
-    //TODO was ist hier eine korrekte Implementation ?
     public void testHashDifferent(){
         Person person1 = new Person(1, "Christoph", "Blocher");
         Person person2 = new Person(2, "Christoph", "blocher");

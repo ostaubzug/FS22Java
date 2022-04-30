@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public final class Temparature implements Comparable<Temparature>
 {
-    private static final float kelvinOffset = 273.15f;
+    private static final float KELVIN_OFFSET = 273.15f;
     private float kelvin;
 
 
@@ -90,11 +90,11 @@ public final class Temparature implements Comparable<Temparature>
     }
 
     public static float convertKelvinToCelsius(float kelvin){
-        return kelvin - kelvinOffset;
+        return kelvin - KELVIN_OFFSET;
     }
 
     public static float convertCelsiusToKelvin(float celsius){
-        return (celsius + kelvinOffset);
+        return (celsius + KELVIN_OFFSET);
     }
 }
 

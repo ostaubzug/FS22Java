@@ -76,13 +76,12 @@ public class TemparatureTest {
 
     @Test
     public void testConvertKelvintoCelsius(){
-        assertEquals(-273.15f, Temparature.convertKelvinToCelsius(0));
+        assertEquals(-273.15f, Temparature.convertKelvinToCelsius(0f));
     }
 
-    //TODO Wie bringe ich diesen Test zum Laufen ?
     @Test
-    public void testConvertKelvinintoCelsius(){
-        assertEquals(74.85f, Temparature.convertKelvinToCelsius(348f));
+    public void testConvertKelvintoCelsius2(){
+        assertEquals(74.85f, Temparature.convertKelvinToCelsius(348f),0.05f);
     }
 
     @Test

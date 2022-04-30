@@ -37,9 +37,8 @@ public abstract class ChemicalElement implements Comparable<ChemicalElement> {
                 return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.LIQUID.getZustand();
             case SOLID:
                 return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.SOLID.getZustand();
-            default:
-                return "Error: Aggregate State could not be defined";
         }
+        return "";
     }
 
 

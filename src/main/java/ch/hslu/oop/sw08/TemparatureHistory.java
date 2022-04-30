@@ -27,14 +27,14 @@ public final class TemparatureHistory {
         return temparatureHistoryList.size();
     }
 
-    public float getMaximum(){
-        if (getCount() == 0) return 0;
-        return Collections.max(temparatureHistoryList).getCelsius();
+    public Temparature getMaximum(){
+        if (getCount() == 0) return null;
+        return Collections.max(temparatureHistoryList);
     }
 
-    public float getMinimum(){
-        if (getCount() == 0) return 0;
-        return Collections.min(temparatureHistoryList).getCelsius();
+    public Temparature getMinimum(){
+        if (getCount() == 0) return null;
+        return Collections.min(temparatureHistoryList);
     }
 
     /**
@@ -43,13 +43,17 @@ public final class TemparatureHistory {
      * @return
      */
     public float getAverage(){
-        float sum = 0;
+        double sum = 0;
         int counter = 0;
         for(final Temparature t : temparatureHistoryList){
             sum += t.getCelsius();
             counter++;
         }
-        return sum/(float)counter;
+        if(counter == 0){
+            return Float.NaN;
+        }
+        return (float) sum/counter;
+
     }
 
 

@@ -34,19 +34,21 @@ public class TemparatureHistoryTest {
     @Test
     public void testgetMaximum(){
         TemparatureHistory tHistory = new TemparatureHistory();
+        Temparature temparature = new Temparature(16);
         tHistory.add(new Temparature(12));
         tHistory.add(new Temparature(16));
         tHistory.add(new Temparature(13));
-        assertEquals(16, tHistory.getMaximum());
+        assertEquals(temparature, tHistory.getMaximum());
     }
 
     @Test
     public void testgetMinimum(){
+        Temparature temparature = new Temparature(12);
         TemparatureHistory tHistory = new TemparatureHistory();
         tHistory.add(new Temparature(12));
         tHistory.add(new Temparature(16));
         tHistory.add(new Temparature(13));
-        assertEquals(12, tHistory.getMinimum());
+        assertEquals(temparature, tHistory.getMinimum());
     }
 
     @Test
@@ -62,13 +64,13 @@ public class TemparatureHistoryTest {
     @Test
     public void testgetMaximumNoValue(){
         TemparatureHistory tHistory = new TemparatureHistory();
-        assertEquals(0, tHistory.getMaximum());
+        assertEquals(null, tHistory.getMaximum());
     }
 
     @Test
     public void testgetMinimumNoValue(){
         TemparatureHistory tHistory = new TemparatureHistory();
-        assertEquals(0, tHistory.getMinimum());
+        assertEquals(null, tHistory.getMinimum());
     }
 
     @Test

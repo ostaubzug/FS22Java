@@ -13,6 +13,5 @@ public enum Aggregate {
     public String getZustand(){
         return this.zustand;
     }
-
 }
 
