@@ -9,13 +9,13 @@ import java.util.List;
  */
 public final class TemparatureHistory {
     
-    private List<Temparature> temparatureHistoryList;
+    private List<Temperature> temparatureHistoryList;
 
     public TemparatureHistory() {
-        temparatureHistoryList = new ArrayList<Temparature>();
+        temparatureHistoryList = new ArrayList<Temperature>();
     }
 
-    public void add(Temparature temparature){
+    public void add(Temperature temparature){
         temparatureHistoryList.add(temparature);
     }
 
@@ -27,12 +27,12 @@ public final class TemparatureHistory {
         return temparatureHistoryList.size();
     }
 
-    public Temparature getMaximum(){
+    public Temperature getMaximum(){
         if (getCount() == 0) return null;
         return Collections.max(temparatureHistoryList);
     }
 
-    public Temparature getMinimum(){
+    public Temperature getMinimum(){
         if (getCount() == 0) return null;
         return Collections.min(temparatureHistoryList);
     }
@@ -45,7 +45,7 @@ public final class TemparatureHistory {
     public float getAverage(){
         double sum = 0;
         int counter = 0;
-        for(final Temparature t : temparatureHistoryList){
+        for(final Temperature t : temparatureHistoryList){
             sum += t.getCelsius();
             counter++;
         }

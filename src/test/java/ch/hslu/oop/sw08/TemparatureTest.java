@@ -14,122 +14,122 @@ public class TemparatureTest {
     }
     @Test
     public void testConstructor() {
-        Temparature temparature = new Temparature(12);
+        Temperature temparature = new Temperature(12);
         assertEquals(12, temparature.getCelsius() );
     }
 
     @Test
     public void testEqual() {
-        EqualsVerifier.forClass(Temparature.class).suppress
+        EqualsVerifier.forClass(Temperature.class).suppress
         (Warning.NONFINAL_FIELDS).verify();
     }
 
     @Test
     public void testEqualsFalse() {
-        Temparature temparature1 = new Temparature(2);
-        Temparature temparature2 = new Temparature(3);
+        Temperature temparature1 = new Temperature(2);
+        Temperature temparature2 = new Temperature(3);
         assertEquals(false, temparature1.equals(temparature2));
     }
 
     @Test
     public void testEqualsTrue() {
-        Temparature temparature1 = new Temparature(1);
-        Temparature temparature2 = new Temparature(1);
+        Temperature temparature1 = new Temperature(1);
+        Temperature temparature2 = new Temperature(1);
         assertEquals(true, temparature1.equals(temparature2));
     }
 
     @Test
     public void testHashSimilar() {
-        Temparature temparature1 = new Temparature(2);
-        Temparature temparature2 = new Temparature(2);
+        Temperature temparature1 = new Temperature(2);
+        Temperature temparature2 = new Temperature(2);
         assertEquals(temparature1.hashCode(), temparature2.hashCode());
     }
 
     @Test
     // SHOULD run but does not have to
     public void testHashDifferent() {
-        Temparature temparature1 = new Temparature(1);
-        Temparature temparature2 = new Temparature(2);
+        Temperature temparature1 = new Temperature(1);
+        Temperature temparature2 = new Temperature(2);
         assertNotEquals(temparature1.hashCode(), temparature2.hashCode());
     }
 
     @Test
     public void testcomparableSmaller(){
-        Temparature temparature1 = new Temparature(2);
-        Temparature temparature2 = new Temparature(5);
+        Temperature temparature1 = new Temperature(2);
+        Temperature temparature2 = new Temperature(5);
         assertEquals(-1, temparature1.compareTo(temparature2));
     }
 
     @Test
     public void testcomparableLarger(){
-        Temparature temparature1 = new Temparature(12);
-        Temparature temparature2 = new Temparature(5);
+        Temperature temparature1 = new Temperature(12);
+        Temperature temparature2 = new Temperature(5);
         assertEquals(1, temparature1.compareTo(temparature2));
     }
 
     @Test
     public void testcomparableSame(){
-        Temparature temparature1 = new Temparature(5);
-        Temparature temparature2 = new Temparature(5);
+        Temperature temparature1 = new Temperature(5);
+        Temperature temparature2 = new Temperature(5);
         assertEquals(0, temparature1.compareTo(temparature2));
     }
 
     @Test
     public void testConvertKelvintoCelsius(){
-        assertEquals(-273.15f, Temparature.convertKelvinToCelsius(0f));
+        assertEquals(-273.15f, Temperature.convertKelvinToCelsius(0f));
     }
 
     @Test
     public void testConvertKelvintoCelsius2(){
-        assertEquals(74.85f, Temparature.convertKelvinToCelsius(348f),0.05f);
+        assertEquals(74.85f, Temperature.convertKelvinToCelsius(348f),0.05f);
     }
 
     @Test
     public void testConvertCelsiusIntoKelvin(){
-        assertEquals(273.15f, Temparature.convertCelsiusToKelvin(0f));
+        assertEquals(273.15f, Temperature.convertCelsiusToKelvin(0f));
     }
 
     @Test
     public void testConvertCelsiusIntoKelvin2(){
-        assertEquals(285.15f, Temparature.convertCelsiusToKelvin(12f));
+        assertEquals(285.15f, Temperature.convertCelsiusToKelvin(12f));
     }
 
     @Test
     public void testGetKelvin(){
-        Temparature temparature = new Temparature(0f);
+        Temperature temparature = new Temperature(0f);
         assertEquals(273.15f, temparature.getKelvin());
     }
 
     @Test
     public void testGetCelsius(){
-        Temparature temparature = new Temparature(0f);
+        Temperature temparature = new Temperature(0f);
         assertEquals(0f, temparature.getCelsius());
     }
 
     @Test
     public void testIncreaseTemperature(){
-        Temparature temparature = new Temparature(0f);
+        Temperature temparature = new Temperature(0f);
         temparature.increaseTemperatureCelsius(12f);
         assertEquals(12f, temparature.getCelsius());
     }
 
     @Test
     public void testDecreaseTemperature(){
-        Temparature temparature = new Temparature(0f);
+        Temperature temparature = new Temperature(0f);
         temparature.decreaseTemperatureCelsius(12f);
         assertEquals(-12f, temparature.getCelsius());
     }
 
     @Test
     public void testSetKelvin(){
-        Temparature temparature = new Temparature(0f);
+        Temperature temparature = new Temperature(0f);
         temparature.setKelvin(12f);
         assertEquals(12f, temparature.getKelvin());
     }
 
     @Test
     public void testSetCelsius(){
-        Temparature temparature = new Temparature(0f);
+        Temperature temparature = new Temperature(0f);
         temparature.setCelsius(12f);
         assertEquals(12f, temparature.getCelsius());
     }

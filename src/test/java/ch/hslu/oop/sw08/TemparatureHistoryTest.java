@@ -14,18 +14,18 @@ public class TemparatureHistoryTest {
     @Test
     public void testCount(){
         TemparatureHistory tHistory = new TemparatureHistory();
-        tHistory.add(new Temparature(12));
-        tHistory.add(new Temparature(16));
-        tHistory.add(new Temparature(132));
+        tHistory.add(new Temperature(12));
+        tHistory.add(new Temperature(16));
+        tHistory.add(new Temperature(132));
         assertEquals(3, tHistory.getCount());
     }
 
     @Test
     public void testClear(){
         TemparatureHistory tHistory = new TemparatureHistory();
-        tHistory.add(new Temparature(12));
-        tHistory.add(new Temparature(16));
-        tHistory.add(new Temparature(132));
+        tHistory.add(new Temperature(12));
+        tHistory.add(new Temperature(16));
+        tHistory.add(new Temperature(132));
         tHistory.clear();
 
         assertEquals(0, tHistory.getCount());
@@ -34,30 +34,30 @@ public class TemparatureHistoryTest {
     @Test
     public void testgetMaximum(){
         TemparatureHistory tHistory = new TemparatureHistory();
-        Temparature temparature = new Temparature(16);
-        tHistory.add(new Temparature(12));
-        tHistory.add(new Temparature(16));
-        tHistory.add(new Temparature(13));
+        Temperature temparature = new Temperature(16);
+        tHistory.add(new Temperature(12));
+        tHistory.add(new Temperature(16));
+        tHistory.add(new Temperature(13));
         assertEquals(temparature, tHistory.getMaximum());
     }
 
     @Test
     public void testgetMinimum(){
-        Temparature temparature = new Temparature(12);
+        Temperature temparature = new Temperature(12);
         TemparatureHistory tHistory = new TemparatureHistory();
-        tHistory.add(new Temparature(12));
-        tHistory.add(new Temparature(16));
-        tHistory.add(new Temparature(13));
+        tHistory.add(new Temperature(12));
+        tHistory.add(new Temperature(16));
+        tHistory.add(new Temperature(13));
         assertEquals(temparature, tHistory.getMinimum());
     }
 
     @Test
     public void testgetAverage(){
         TemparatureHistory tHistory = new TemparatureHistory();
-        tHistory.add(new Temparature(-12));
-        tHistory.add(new Temparature(16));
-        tHistory.add(new Temparature(13));
-        tHistory.add(new Temparature(0));
+        tHistory.add(new Temperature(-12));
+        tHistory.add(new Temperature(16));
+        tHistory.add(new Temperature(13));
+        tHistory.add(new Temperature(0));
         assertEquals(4.25f, tHistory.getAverage());
     }
 

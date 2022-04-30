@@ -22,21 +22,21 @@ public class MercuryTest {
     @Test
     public void testAggregateSolid(){
         ChemicalElement mercury = new Mercury();
-        Aggregate aggregateState = mercury.getAggregateState(new Temparature(-40));
+        Aggregate aggregateState = mercury.getAggregateState(new Temperature(-40));
         assertEquals(Aggregate.SOLID, aggregateState);
     }
 
     @Test
     public void testAggregateLiquid(){
         ChemicalElement mercury = new Mercury();
-        Aggregate aggregateState = mercury.getAggregateState(new Temparature(12));
+        Aggregate aggregateState = mercury.getAggregateState(new Temperature(12));
         assertEquals(Aggregate.LIQUID, aggregateState);
     }
 
     @Test
     public void testAggregateGaseous(){
         ChemicalElement mercury = new Mercury();
-        Aggregate aggregateState = mercury.getAggregateState(new Temparature(360));
+        Aggregate aggregateState = mercury.getAggregateState(new Temperature(360));
         assertEquals(Aggregate.GAS, aggregateState);
     }
 
@@ -87,14 +87,14 @@ public class MercuryTest {
     @Test
     public void testAggregateSolidString(){
         ChemicalElement mercury = new Mercury();
-        String aggregateState = mercury.getAggregateStateString(new Temparature(-40));
+        String aggregateState = mercury.getAggregateStateString(new Temperature(-40));
         assertEquals("Hg ist bei -40.0 °C fest", aggregateState);
     }
 
     @Test
     public void testAggregateLiquidString(){
         ChemicalElement mercury = new Mercury();
-        String aggregateState = mercury.getAggregateStateString(new Temparature(12));
+        String aggregateState = mercury.getAggregateStateString(new Temperature(12));
         assertEquals("Hg ist bei 12.0 °C flüssig", aggregateState);
     }
 
@@ -102,7 +102,7 @@ public class MercuryTest {
     @Disabled
     public void testAggregateGaseousString(){
         ChemicalElement mercury = new Mercury();
-        String aggregateState = mercury.getAggregateStateString(new Temparature(360));
+        String aggregateState = mercury.getAggregateStateString(new Temperature(360));
         assertEquals("Hg ist bei 360 °C gasförmig", aggregateState);
     }
 

@@ -21,21 +21,21 @@ public class LeadTest {
     @Test
     public void testAggregateSolid(){
         ChemicalElement lead = new Lead();
-        Aggregate aggregateState = lead.getAggregateState(new Temparature(-212));
+        Aggregate aggregateState = lead.getAggregateState(new Temperature(-212));
         assertEquals(Aggregate.SOLID, aggregateState);
     }
 
     @Test
     public void testAggregateLiquid(){
         ChemicalElement lead = new Lead();
-        Aggregate aggregateState = lead.getAggregateState(new Temparature(900));
+        Aggregate aggregateState = lead.getAggregateState(new Temperature(900));
         assertEquals(Aggregate.LIQUID, aggregateState);
     }
 
     @Test
     public void testAggregateGaseous(){
         ChemicalElement lead = new Lead();
-        Aggregate aggregateState = lead.getAggregateState(new Temparature(1800));
+        Aggregate aggregateState = lead.getAggregateState(new Temperature(1800));
         assertEquals(Aggregate.GAS, aggregateState);
     }
 
@@ -48,14 +48,14 @@ public class LeadTest {
     @Test
     public void testAggregateSolidString(){
         ChemicalElement lead = new Lead();
-        String aggregateState = lead.getAggregateStateString(new Temparature(-212));
+        String aggregateState = lead.getAggregateStateString(new Temperature(-212));
         assertEquals("Pb ist bei -212.0 °C fest", aggregateState);
     }
 
     @Test
     public void testAggregateLiquidString(){
         ChemicalElement lead = new Lead();
-        String aggregateState = lead.getAggregateStateString(new Temparature(900));
+        String aggregateState = lead.getAggregateStateString(new Temperature(900));
         assertEquals("Pb ist bei 900.0 °C flüssig", aggregateState);
     }
 
@@ -63,7 +63,7 @@ public class LeadTest {
     @Disabled
     public void testAggregateGaseousString(){
         ChemicalElement lead = new Lead();
-        String aggregateState = lead.getAggregateStateString(new Temparature(1800f));
+        String aggregateState = lead.getAggregateStateString(new Temperature(1800f));
         assertEquals("Pb ist bei 1800 °C gasförmig", aggregateState);
     }
 }

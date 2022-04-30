@@ -5,10 +5,10 @@ import java.util.Objects;
 public abstract class ChemicalElement implements Comparable<ChemicalElement> {
 
     private final String symbol;
-    private final Temparature boilTemperature;
-    private final Temparature meltTemperature;
+    private final Temperature boilTemperature;
+    private final Temperature meltTemperature;
 
-    public ChemicalElement(String symbol, Temparature boilTemperature, Temparature meltTemperature) {
+    public ChemicalElement(String symbol, Temperature boilTemperature, Temperature meltTemperature) {
         this.symbol = symbol;
         this.boilTemperature = boilTemperature;
         this.meltTemperature = meltTemperature;
@@ -18,7 +18,7 @@ public abstract class ChemicalElement implements Comparable<ChemicalElement> {
         return symbol;
     }
 
-    public Aggregate getAggregateState(Temparature temparature) {
+    public Aggregate getAggregateState(Temperature temparature) {
         if (temparature.getKelvin() <= meltTemperature.getKelvin()) {
             return Aggregate.SOLID;
         } else if (temparature.getKelvin() > meltTemperature.getKelvin()
@@ -29,7 +29,7 @@ public abstract class ChemicalElement implements Comparable<ChemicalElement> {
         }
     }
 
-    public String getAggregateStateString(Temparature temparature) {
+    public String getAggregateStateString(Temperature temparature) {
         switch(getAggregateState(temparature)){
             case GAS:
                 return getSymbol() + " ist bei " + Float.toString(temparature.getCelsius()) + " °C " + Aggregate.GAS.getZustand();

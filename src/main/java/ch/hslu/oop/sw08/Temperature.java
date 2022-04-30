@@ -12,13 +12,13 @@ import java.util.Objects;
  */
 
 
-public final class Temparature implements Comparable<Temparature>
+public final class Temperature implements Comparable<Temperature>
 {
     private static final float KELVIN_OFFSET = 273.15f;
     private float kelvin;
 
 
-    public Temparature(float celsius)
+    public Temperature(float celsius)
     {
         kelvin = convertCelsiusToKelvin(celsius);
     }
@@ -73,7 +73,7 @@ public final class Temparature implements Comparable<Temparature>
         if (object == this) {
             return true;
         }
-        if (!(object instanceof Temparature p)) {
+        if (!(object instanceof Temperature p)) {
             return false;
         }
         return (Objects.equals(p.kelvin, this.kelvin));
@@ -85,7 +85,7 @@ public final class Temparature implements Comparable<Temparature>
     }
 
     @Override
-    public int compareTo(Temparature temparature) {
+    public int compareTo(Temperature temparature) {
         return Float.compare(this.kelvin, temparature.kelvin );
     }
 
