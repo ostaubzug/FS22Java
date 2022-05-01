@@ -1,6 +1,5 @@
 package ch.hslu.oop.MainClassPackage;
 
-import java.util.Scanner;
 
 import ch.hslu.oop.sw10.*;
 
