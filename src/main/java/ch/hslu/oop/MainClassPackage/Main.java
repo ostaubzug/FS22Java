@@ -1,15 +1,14 @@
 package ch.hslu.oop.MainClassPackage;
 
-import java.util.Scanner;
-
-import ch.hslu.oop.sw10.*;
-
+import ch.hslu.oop.sw11.*;
 
 /**
  * 
  */
 public class Main {
-    public static void main(String[] args){
-        TemperatureInput.startInput();
-    } 
+    public static void main(String[] args) {
+        Car car = new Car();
+        Engine engine = new Engine();
+        engine.switchOn(); 
+    }
 }
