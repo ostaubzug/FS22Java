@@ -39,11 +39,11 @@ public class TemperatureTest {
         assertThat(e.getMessage()).isEqualTo("No Tempareture smaller than 0K allowed.");
     }
 
-        @Test
-        public void testConstructorKelvin() {
-            Temperature temparature = Temperature.createFromKelvin(2000);
-            assertEquals(2000, temparature.getKelvin() , 0.15f);
-        }
+    @Test
+    public void testConstructorKelvin() {
+        Temperature temparature = Temperature.createFromKelvin(2000);
+        assertEquals(2000, temparature.getKelvin() , 0.15f);
+    }
 
     @Test
     public void testEqual() {
