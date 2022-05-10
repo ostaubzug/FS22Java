@@ -10,7 +10,6 @@ import java.util.List;
 public final class TemparatureHistory {
     
     private List<Temperature> temparatureHistoryList;
-    private final List<PropertyChangeListener> changeListeners = new ArrayList<PropertyChangeListener>();
 
 
     public TemparatureHistory() {
