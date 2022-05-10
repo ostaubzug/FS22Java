@@ -22,12 +22,15 @@ public final class Engine implements ISwitchable{
         rpm = 0;
     }
 
+    //TODO Man könnte auch eine Nullpointer/IllegalArgument Exception werfen
+    //TODO Sonst evt. ein Log
     public void addPropertyChangeListener(final PropertyChangeListener listener){
         if(listener != null){
         this.changeListeners.add(listener);
         }
     }
 
+    //TODO Hier ist es egal wenn es ein Null ist
     public void removePropertyChangeListener(final PropertyChangeListener listener){
         if(listener != null){
             this.changeListeners.remove(listener);

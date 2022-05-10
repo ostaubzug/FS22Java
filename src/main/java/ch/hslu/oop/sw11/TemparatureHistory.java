@@ -38,6 +38,10 @@ public final class TemparatureHistory {
         return Collections.min(temparatureHistoryList);
     }
 
+    public Temperature getItem(int index){
+        return temparatureHistoryList.get(index);
+    }
+
     /**
      * 
      Returns the average Temparature from the List in Celsius.
