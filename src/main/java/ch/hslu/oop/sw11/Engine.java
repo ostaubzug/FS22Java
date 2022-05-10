@@ -16,25 +16,35 @@ import java.util.List;
 public final class Engine implements ISwitchable{
 
     private int rpm;
-    private final List<PropertyChangeListener> changeListeners = new ArrayList<>();
+    private final List<PropertyChangeListener> changeListeners = new ArrayList<PropertyChangeListener>();
     
     public Engine() {
         rpm = 0;
     }
 
     public void addPropertyChangeListener(final PropertyChangeListener listener){
+        if(listener != null){
         this.changeListeners.add(listener);
+        }
     }
 
     public void removePropertyChangeListener(final PropertyChangeListener listener){
-        this.changeListeners.remove(listener);
+        if(listener != null){
+            this.changeListeners.remove(listener);
+        }
+    }
+
+    private void firePropertyChangeEvent(final PropertyChangeEvent pcEvent){
+        for (final PropertyChangeListener listener : this.changeListeners){
+            listener.propertyChange(pcEvent);
+        }
     }
 
     @Override
     public void switchOn()
     {
         rpm = 100;
-        PropertyChangeEvent event = new PropertyChangeEvent(new Engine(), "rpm", 0, 100);
+        firePropertyChangeEvent(new PropertyChangeEvent(this, "rpm", 0, 100));
 
     }
     
@@ -43,6 +53,8 @@ public final class Engine implements ISwitchable{
     public void switchOff()
     {
         rpm = 0;
+        firePropertyChangeEvent(new PropertyChangeEvent(this, "rpm", 100, 0));
+
     }
     @Override
     public boolean isSwitchedOn()

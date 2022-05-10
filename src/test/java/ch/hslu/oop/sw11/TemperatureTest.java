@@ -1,4 +1,4 @@
-package ch.hslu.oop.sw10;
+package ch.hslu.oop.sw11;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -24,7 +24,7 @@ public class TemperatureTest {
         assertThrows(IllegalArgumentException.class, () -> {
             Temperature.createFromCelsius(-274);
         });
-        assertThat(e.getMessage()).isEqualTo("No Temperature smaller than -273.15C allowed.");
+        assertThat(e.getMessage()).isEqualTo("No temperature smaller than 0 Kelvin allowed.");
     }
 
     @Test
@@ -33,7 +33,7 @@ public class TemperatureTest {
         assertThrows(IllegalArgumentException.class, () -> {
             Temperature.createFromKelvin(-0.1f);
         });
-        assertThat(e.getMessage()).isEqualTo("No Tempareture smaller than 0K allowed.");
+        assertThat(e.getMessage()).isEqualTo("No temperature smaller than 0 Kelvin allowed.");
     }
 
     @Test

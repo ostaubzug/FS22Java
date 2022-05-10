@@ -26,7 +26,7 @@ public final class Car implements ISwitchable, PropertyChangeListener
     private static final Logger LOG = LogManager.getLogger(Car.class);
     
     public Car() {
-        isOn = false;
+
     }
 
     @Override

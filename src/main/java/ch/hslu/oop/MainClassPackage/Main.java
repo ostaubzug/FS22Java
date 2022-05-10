@@ -9,6 +9,10 @@ public class Main {
     public static void main(String[] args) {
         Car car = new Car();
         Engine engine = new Engine();
-        engine.switchOn(); 
+
+        engine.addPropertyChangeListener(car);
+        engine.switchOn();
+        engine.switchOff();
+        engine.switchOn();
     }
 }

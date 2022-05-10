@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ch.hslu.oop.sw10;
+package ch.hslu.oop.sw11;
 
 import java.util.Objects;
 
@@ -20,21 +20,17 @@ public final class Temperature implements Comparable<Temperature>
 
     private Temperature(float kelvin)
     {
+        if(kelvin < 0){
+            throw new IllegalArgumentException("No temperature smaller than 0 Kelvin allowed.");
+        }
         this.kelvin = kelvin;
     }
 
     public static Temperature createFromCelsius(final float celsius){
-        if(convertCelsiusToKelvin(celsius) < 0){
-            throw new IllegalArgumentException("No Temperature smaller than -273.15C allowed.");
-        }
         return new Temperature(convertCelsiusToKelvin(celsius));
     }
 
     public static Temperature createFromKelvin(final float kelvin){
-        if(kelvin < 0){
-            //TODO das Fehler werfen im Constructor machen, für weniger Redundanzen
-            throw new IllegalArgumentException("No Tempareture smaller than 0K allowed.");
-        }
         return new Temperature(kelvin);
     }
 
