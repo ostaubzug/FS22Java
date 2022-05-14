@@ -4,7 +4,7 @@ import java.util.EventObject;
 
 public class TemperatureMaxEvent extends EventObject {
 
-    private Temperature maxTemperature;
+    //private Temperature maxTemperature;
 
     public TemperatureMaxEvent(Object arg0) {
         super(arg0);
